@@ -3,36 +3,61 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>transportation_business_frontend — Snake Game</title>
+    <title>transportation_business_frontend</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="app.js" defer></script>
   </head>
   <body>
     <main class="page">
       <header class="hero">
-        <div>
-          <p class="eyebrow">Live Demo</p>
-          <h1>transportation_business_frontend</h1>
-          <p class="subtitle">A tiny snake game you can play right in the browser.</p>
-        </div>
-        <div class="stats">
-          <div>
-            <span class="label">Speed</span>
-            <span id="speedValue">8</span>
-          </div>
-          <div>
-            <span class="label">Score</span>
-            <span id="scoreValue">0</span>
-          </div>
+        <p class="eyebrow">Live Demo</p>
+        <h1>transportation_business_frontend</h1>
+        <p class="subtitle">Build a transportation business frontend with two tabs.</p>
+        <div class="cta">
+          <button class="primary">Get a Quote</button>
+          <button class="ghost">Talk to an Agent</button>
         </div>
       </header>
 
-      <section class="game-card">
-        <canvas id="game" width="400" height="400" aria-label="Snake game"></canvas>
-        <div class="controls">
-          <button id="startBtn">Start</button>
-          <button id="resetBtn">Reset</button>
-          <p class="hint">Use Arrow Keys or WASD</p>
+      <section class="tabs">
+        <div class="tab-buttons">
+          <button class="tab active" data-tab="tab-a">Overview</button>
+          <button class="tab" data-tab="tab-b">Pricing</button>
+        </div>
+        <div class="tab-panels">
+          <div class="panel active" id="tab-a">
+            <h3>Overview</h3>
+            <p>Regional transport, same-day delivery, and scheduled fleet runs tailored to your business.</p>
+            <ul>
+              <li>Route planning and dispatch</li>
+              <li>Live shipment tracking</li>
+              <li>Dedicated account support</li>
+            </ul>
+          </div>
+          <div class="panel" id="tab-b">
+            <h3>Pricing</h3>
+            <p>Modern fleet coverage with safety-first operations and transparent pricing.</p>
+            <ul>
+              <li>Refrigerated, standard, and express vehicles</li>
+              <li>On-demand capacity scaling</li>
+              <li>Monthly pricing plans</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats">
+        <div>
+          <span>98%</span>
+          <p>On-time delivery</p>
+        </div>
+        <div>
+          <span>24/7</span>
+          <p>Dispatch support</p>
+        </div>
+        <div>
+          <span>120+</span>
+          <p>Fleet partners</p>
         </div>
       </section>
     </main>
