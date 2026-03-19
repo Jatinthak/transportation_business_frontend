@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>transportation_business_frontend — Snake Game</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Live Demo</p>
+          <h1>transportation_business_frontend</h1>
+          <p class="subtitle">A tiny snake game you can play right in the browser.</p>
+        </div>
+        <div class="stats">
+          <div>
+            <span class="label">Speed</span>
+            <span id="speedValue">8</span>
+          </div>
+          <div>
+            <span class="label">Score</span>
+            <span id="scoreValue">0</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="game-card">
+        <canvas id="game" width="400" height="400" aria-label="Snake game"></canvas>
+        <div class="controls">
+          <button id="startBtn">Start</button>
+          <button id="resetBtn">Reset</button>
+          <p class="hint">Use Arrow Keys or WASD</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
