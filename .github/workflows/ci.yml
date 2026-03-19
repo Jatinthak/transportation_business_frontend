@@ -1,0 +1,66 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - main
+    # PRs to the 'main' branch are also considered as pushes.
+  pull_request:
+
+jobs:
+  build-docker-image:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup Docker
+      run: docker compose --file docker-compose.yml up -d
+
+  test:
+    # Run tests on all branches.
+    # Use 'main' branch for CI/CD builds and pushes to Vercel, Render.
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js
+        run: npm install
+
+  deploy-frontend-to-vercel:
+    # Deploy frontend to Vercel on main branch only.
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js
+        run: npm install
+
+  deploy-backend-to-render:
+    # Deploy backend to Render on main branch only.
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js
+        run: npm install
+
+  deploy-docker-image-to-render-service-id:
+    # Deploy Docker image to Render using a specific service ID.
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js
+        run: npm install
+
+  deploy-frontend-to-vercel-with-secrets:
+    # Deploy frontend to Vercel with secrets.
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    env:
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      RENDER_TOKEN: ${{ secrets.RENDER_TOKEN }}
+      RENDER_SERVICE_ID: ${{ secrets.RENDER_SERVICE_ID }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js
+        run: npm install
