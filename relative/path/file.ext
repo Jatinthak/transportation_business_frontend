@@ -1,0 +1,32 @@
+# relative/path/file.ext
+## Purpose: What this file does in one sentence
+
+This file is a placeholder for the frontend of our transportation business project. It serves as an entry point to the application and includes loading states, error handling, and basic functionality.
+
+### Language: EXT
+
+The language used here can be inferred from the context provided by the user. Since there are no specific requirements or guidelines mentioned in the prompt, we will assume that it is a placeholder for any file type not explicitly listed as "HTML", "CSS", "JS" etc., which could include files like .env, .gitignore, README.md, and so on.
+
+### Strict Rules
+
+1. **Write COMPLETE code**: Ensure all parts of this file are complete with the necessary functionality.
+2. **Follow API contract exactly**:
+   - The purpose is to provide a placeholder for the frontend that follows the specified API contract.
+3. **Use correct ENV variable names from the contract**: Use variables like `DB_URL` and `JWT_SECRET` as per the provided contract details.
+
+4. **Add proper error handling**: Implement appropriate error messages or states in cases of failure, such as when trying to access a non-existent route or making an unsuccessful API call.
+5. **JSDoc/docstrings for functions**:
+   - Add JSDocs comments with function names and docstring descriptions within the file content.
+
+6. For frontend: Include loading states, error handling, empty state
+7. For backend: Input validation, rate limiting middleware
+
+8. For database: Use migrations format (not specified in this prompt)
+
+9. **Never hardcode secrets**: Do not use hardcoded values for sensitive information like API keys or secret data.
+
+10. **Output ONLY the file content**:
+
+// relative/path/file.ext
+
+Please note that these are general guidelines and may vary depending on specific project requirements, coding standards, and best practices in your development environment.
